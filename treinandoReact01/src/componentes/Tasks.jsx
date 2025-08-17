@@ -3,17 +3,19 @@ import "../App.css";
 function Tasks(props) {
   return (
     <>
-      <section>
-        <div className="blocosTarefas">
-          <h4>{props.tasks[0].title}</h4>
-        </div>
-        <div className="blocosTarefas">
-          <h4>{props.tasks[1].title}</h4>
-        </div>
-        <div className="blocosTarefas">
-          <h4>{props.tasks[2].title}</h4>
-        </div>
-      </section>
+      <ul className="camposTask">
+        {props.tasks.map((task) => (
+          <li className="blocosTarefas">
+            <button
+              className={`escritaTask ${task.isCompleted ? "lineThrough" : ""}`}
+              onClick={() => props.onTaskClick(task.id)}
+            >
+              {task.title}
+            </button>
+            <button className="seta">&gt;</button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

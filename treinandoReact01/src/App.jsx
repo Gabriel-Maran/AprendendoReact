@@ -25,11 +25,43 @@ function App() {
       isCompleted: false,
     },
   ]);
+
+  function onTaskClick(taskId) {
+    setTask(
+      tasks.map((task) => {
+        if (task.id == taskId) {
+          return { ...task, isCompleted: !task.isCompleted };
+        }
+        return task;
+      })
+    );
+  }
+
+  function onTaskSubmited(title, description) {
+    setTask([
+      ...tasks,
+      {
+        id: tasks.length + 1,
+        title,
+        description,
+        isCompleted: false,
+      },
+    ]);
+  }
+
+  function onDeleteClick(taskId) {
+    setTask(tasks.filter((task) => task.id != taskId));
+  }
+
   return (
     <>
       <h2>Gerenciador de Tarefas</h2>
-      <AddTask />
-      <Tasks tasks={tasks} />
+      <AddTask tasks={tasks} onTaskSubmited={onTaskSubmited} />
+      <Tasks
+        tasks={tasks}
+        onTaskClick={onTaskClick}
+        onDeleteClick={onDeleteClick}
+      />
     </>
   );
 }
