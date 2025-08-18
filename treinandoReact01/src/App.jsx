@@ -50,7 +50,10 @@ function App() {
   }
 
   function onDeleteClick(taskId) {
-    setTask(tasks.filter((task) => task.id != taskId));
+    let resultado = confirm("Confirma que deseja excluir ?");
+    if (resultado) {
+      setTask(tasks.filter((task) => task.id != taskId));
+    }
   }
 
   return (
@@ -59,8 +62,8 @@ function App() {
       <AddTask tasks={tasks} onTaskSubmited={onTaskSubmited} />
       <Tasks
         tasks={tasks}
-        onTaskClick={onTaskClick}
         onDeleteClick={onDeleteClick}
+        onTaskClick={onTaskClick}
       />
     </>
   );
