@@ -1,12 +1,12 @@
 import Rodrigo from "./Rodrigo";
 
 function Unipar() {
-    return(
-        <>
-        <Rodrigo />
-        <h2>O Taffe é idoso</h2>
-        </>
-    )
+  return (
+    <>
+      <Rodrigo />
+      <h2>O Taffe é idoso</h2>
+    </>
+  );
 }
 
 export default Unipar;
