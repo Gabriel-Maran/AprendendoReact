@@ -1,11 +1,17 @@
 import SquircleAzul from "./SquircleAzul";
-function SquircleRow() {
+function SquircleRow({ idRow }) {
   return (
     <>
-      <SquircleAzul idSquircle="squircleAzul"></SquircleAzul>
-      <SquircleAzul idSquircle="squircleAzul"></SquircleAzul>
-      <SquircleAzul idSquircle="squircleAzul"></SquircleAzul>
-      <SquircleAzul idSquircle="squircleAzul"></SquircleAzul>
+      <div id={idRow}>
+        <SquircleAzul idSquircle="squircleAzulRight"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulLeft"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulRight"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulLeft"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulRight"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulLeft"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulRight"></SquircleAzul>
+        <SquircleAzul idSquircle="squircleAzulLeft"></SquircleAzul>
+      </div>
     </>
   );
 }

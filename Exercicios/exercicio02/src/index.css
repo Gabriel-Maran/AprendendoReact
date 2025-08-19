@@ -10,19 +10,26 @@
 }
 
 #quadroAzul {
-  background-color: rgb(13, 14, 48);
+  background-color: #080c2c;
   padding: 1.5rem;
 }
 
 #quadroBranco {
-  display: grid;
-  grid-template-columns: repeat(4, 0.5fr);
-  background-color: rgb(226, 236, 233);
-  padding: 1.5rem;
+  display: flex;
+  background-color: #e8eff2;
+  padding: 2rem;
 }
 
-#squircleAzul {
-  background-color: rgb(13, 13, 43);
+#squircleAzulLeft {
+  background-color: #080c2c;
   padding: 2.5rem;
-  border-radius: 15px;
+  border-radius: 10px;
+  margin-right: 5.2rem;
+}
+
+#squircleAzulRight {
+  background-color: #080c2c;
+  padding: 2.5rem;
+  border-radius: 10px;
+  margin-left: 5.2rem;
 }

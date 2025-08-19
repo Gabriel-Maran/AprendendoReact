@@ -4,10 +4,10 @@ function QuadroBranco({ idQuadro }) {
   return (
     <>
       <div id={idQuadro}>
-        <SquircleRow></SquircleRow>
-        <SquircleRow></SquircleRow>
-        <SquircleRow></SquircleRow>
-        <SquircleRow></SquircleRow>
+        <SquircleRow idRow={"rowSquircle"}></SquircleRow>
+        <SquircleRow idRow={"rowSquircle"}></SquircleRow>
+        <SquircleRow idRow={"rowSquircle"}></SquircleRow>
+        <SquircleRow idRow={"rowSquircle"}></SquircleRow>
       </div>
     </>
   );
