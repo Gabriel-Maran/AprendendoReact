@@ -1,0 +1,28 @@
+:root {
+  display: flex;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#quadroAzul {
+  background-color: rgb(13, 14, 48);
+  padding: 1.5rem;
+}
+
+#quadroBranco {
+  display: grid;
+  grid-template-columns: repeat(4, 0.5fr);
+  background-color: rgb(226, 236, 233);
+  padding: 1.5rem;
+}
+
+#squircleAzul {
+  background-color: rgb(13, 13, 43);
+  padding: 2.5rem;
+  border-radius: 15px;
+}
