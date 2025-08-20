@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+}
+
+#barraVermelha {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  background-color: rgb(145, 6, 5);
+  padding: 1rem;
+}
+
+#barraVermelhoFraco {
+  display: flex;
+  background-color: rgb(198, 75, 75);
+  padding: 4rem;
+  margin: 0 1rem;
+}
+
+#main {
+  display: flex;
+}
+
+#quadradoVermelho {
+  display: flex;
+  background-color: rgb(191, 45, 44);
+  flex-basis: 20em;
+  padding: 20em;
+  margin: 1rem;
+}
+
+#quatroBloco {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(2, 1fr);
+}
