@@ -1,7 +1,9 @@
 function QuadradoVermelhoFraco({ classBloco, conteudo }) {
   return (
     <>
-      <div className={classBloco}>{conteudo}</div>
+      <div className={classBloco}>
+        <h1>{conteudo}</h1>
+      </div>
     </>
   );
 }

@@ -2,6 +2,7 @@ import BarraVermelha from "./componentes/BarraVermelha";
 import BarraVermelhoFraco from "./componentes/BarraVermelhoFraco";
 import QuadradoVermelho from "./componentes/QuadradoVermelho";
 import QuadradoVermelhoFraco from "./componentes/QuadradoVermelhoFraco";
+import BarraVermelhoForte from "./componentes/BarraVermelhoForte";
 import "./App.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           ></QuadradoVermelhoFraco>
         </div>
       </div>
+    <BarraVermelhoForte idBloco={"barraVermelhoForte"}></BarraVermelhoForte>
     </>
   );
 }
