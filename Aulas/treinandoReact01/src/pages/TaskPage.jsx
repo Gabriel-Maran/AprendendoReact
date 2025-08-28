@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TaskPage() {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const title = searchParams.get("title");
   const description = searchParams.get("description");
@@ -16,7 +18,10 @@ function TaskPage() {
   }, [description]);
   return (
     <>
-      <h2>Detalhes da tarefa</h2>
+      <header id="taskPageHeader">
+        <button onClick={() => navigate(-1)}> &lt;</button>
+        <h2>Detalhes da tarefa</h2>
+      </header>
       <section className="camposTask">
         <p>{title}</p>
         <textarea readOnly className="textoDescricao" ref={textRef}>

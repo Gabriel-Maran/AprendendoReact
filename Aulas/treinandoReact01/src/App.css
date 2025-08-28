@@ -45,6 +45,7 @@ section {
   border-radius: 5px;
   padding: 1%;
   margin: 1%;
+  min-height: 2rem;
 }
 
 li {
@@ -133,4 +134,24 @@ img {
   min-height: 20px;
   text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#taskPageHeader {
+  position: relative;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+#taskPageHeader h2 {
+  margin: auto;
+}
+
+#taskPageHeader button {
+  border: none;
+  background-color: #849bb3;
+  padding: 0.5rem;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
 }
