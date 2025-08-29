@@ -4,6 +4,7 @@ import "../App.css";
 import { useEffect, useState } from "react";
 
 function App() {
+  //Não se usa if, se usa assim {condição && oq executa}, {task.id == 1 && console.log(1)} ou {task.id == 1 ? console.log(1) : null}
   // State ( Estado )
   const [tasks, setTask] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
@@ -12,6 +13,25 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      //Chamar API
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos?_limit=10",
+        {
+          method: "GET",
+        }
+      );
+
+      //Pegar dados que a API retorna
+      const data = await response.json();
+
+      //Armazenar/persistir esses dados no state
+      setTask(data.map(tasks));
+    };
+    //fetchTasks(); // Pode ser mudado para usar uma API que crie no banco de dados... Este modelo é apenas demonstrativo
+  });
 
   function onTaskClick(taskId) {
     setTask(
