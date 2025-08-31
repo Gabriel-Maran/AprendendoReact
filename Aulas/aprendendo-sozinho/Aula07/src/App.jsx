@@ -22,7 +22,7 @@ export default function App() {
         <input
           type="text"
           placeholder="Novo nome"
-          onChan={(event) => {
+          onChange={(event) => {
             setguardaNovoNome(event.target.value);
           }}
         />
