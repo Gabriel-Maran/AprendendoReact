@@ -21,8 +21,8 @@ const useTest = () => {
   return 1 + 1;
 };
 
-//componente react
-const test = () => {
+//componente funcional react (tem que ter a primeira letra maiuscula)
+const Test = () => {
   return (
     <>
       <div>Componente Test</div>
