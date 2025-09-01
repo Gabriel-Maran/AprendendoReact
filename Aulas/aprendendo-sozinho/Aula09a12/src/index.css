@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+html {
+  background-color: rgb(190, 183, 183);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#listaTarefas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  background-color: grey;
+  border-radius: 8px;
+  border: 2px black solid;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+#addTask {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(172, 168, 168);
+  border-radius: 8px;
+}
+
+#addTask input {
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+#idTasks {
+  align-content: center;
+}
+
+#taskIndividual {
+  display: flex;
+  background-color: rgb(172, 168, 168);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+#taskIndividualConcluida {
+  display: flex;
+  background-color: rgb(172, 168, 168);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+#taskIndividualConcluida p {
+  text-decoration: line-through;
+}
