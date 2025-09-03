@@ -8,8 +8,9 @@ export default function AddTask({
   return (
     <>
       <section id={idSection}>
-        <input value={inputValue} onChange={inputQndMudar} />
+        <input id="addTaskInpt" value={inputValue} onChange={inputQndMudar} />
         <button
+          id="addTaskButton"
           onClick={() => {
             buttonQndClicar();
           }}

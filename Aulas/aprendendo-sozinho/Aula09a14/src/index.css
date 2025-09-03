@@ -7,6 +7,7 @@
 ol {
   list-style-type: none;
   padding: 0;
+  width: 80%;
 }
 
 html {
@@ -41,11 +42,6 @@ html {
   border-radius: 8px;
 }
 
-#addTask input {
-  padding: 10px;
-  margin-bottom: 1rem;
-}
-
 #idTasks {
   align-content: center;
 }
@@ -66,8 +62,15 @@ html {
   border-radius: 10px;
 }
 
+#taskIndividual p {
+  display: flex;
+  align-items: center;
+}
+
 #taskIndividualConcluida p {
+  display: flex;
   text-decoration: line-through;
+  align-items: center;
 }
 
 #botoesInteragiveis {
@@ -79,4 +82,22 @@ html {
 
 #nomeTarefa {
   width: 50%;
+}
+
+#estiloBotao {
+  background-color: rgb(194, 188, 188);
+  border: 1px solid rgb(102, 99, 99);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#addTaskButton {
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+#addTaskInpt {
+  border: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }

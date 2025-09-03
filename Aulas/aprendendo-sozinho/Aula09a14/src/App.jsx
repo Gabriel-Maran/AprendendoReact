@@ -3,6 +3,9 @@ import "./App.css";
 import AddTask from "./componentes/AddTask";
 import TaskItem from "./componentes/TaskItem";
 import Tasks from "./componentes/Tasks";
+import { TodoAPI } from "./shared/services/api/TodoAPI";
+
+TodoAPI.getAll().then((data) => console.log("APP", data));
 
 function App() {
   const [value, setValue] = useState("");
