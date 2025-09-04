@@ -18,6 +18,7 @@ createServer({
       return todo; //Retorna o registro criado
       //return schema.create('todos', JSON.parse(request.requestBody))
     });
+    //Pode ser usado o this.patch tambem, o put substitui algo que já existe de forma completa, o patch substitui partes
     this.put("/todos/:id", (schema, request) => {
       const id = String(request.params.id); //Pega o id da URL
       const newAtributo = JSON.parse(request.requestBody); // Pega o 'novo atributo'
