@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import AddTask from "./componentes/AddTask";
 import TaskItem from "./componentes/TaskItem";
@@ -15,6 +15,13 @@ function App() {
     { id: "2", tarefa: "Fazer Almoço", complete: false },
     { id: "3", tarefa: "Fazer Janta", complete: false },
   ]);
+  useEffect(() => {
+    TodoAPI.getAll().then((data) => setTasks(data));
+    // UseEffect: Executa toda vez que algo dentro dos '[]' mudar, ou seja,
+    // se eu colocar vazio, executa uma vez(qnd carrega a page), se eu nn colocar nada, toda render nova ele executa
+    // se eu coloca '[task]', vai executar sempre que o task for atualizado. Ele realiza algo, quando algo muda
+    // Ou seja, sempre roda na montagem inicial + quando qualquer dependência listada mudar.
+  }, []);
   function add() {
     setTasks([...tasks, { id: (tasks.length + 1).toString(), tarefa: value }]);
     setValue("");
