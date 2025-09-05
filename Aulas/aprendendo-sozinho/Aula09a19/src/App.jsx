@@ -5,16 +5,9 @@ import TaskItem from "./componentes/TaskItem";
 import Tasks from "./componentes/Tasks";
 import { TodoAPI } from "./shared/services/api/TodoAPI";
 
-TodoAPI.getAll().then((data) => console.log("APP", data));
-
 function App() {
   const [value, setValue] = useState("");
-  const [tasks, setTasks] = useState([
-    { id: "1", tarefa: "Fazer Café", complete: false },
-    { id: "4", tarefa: "Fazer Café", complete: false },
-    { id: "2", tarefa: "Fazer Almoço", complete: false },
-    { id: "3", tarefa: "Fazer Janta", complete: false },
-  ]);
+  const [tasks, setTasks] = useState([]);
   useEffect(() => {
     TodoAPI.getAll().then((data) => setTasks(data));
     // UseEffect: Executa toda vez que algo dentro dos '[]' mudar, ou seja,
@@ -23,15 +16,29 @@ function App() {
     // Ou seja, sempre roda na montagem inicial + quando qualquer dependência listada mudar.
   }, []);
   function add() {
-    setTasks([...tasks, { id: (tasks.length + 1).toString(), tarefa: value }]);
-    setValue("");
+    TodoAPI.create({ tarefa: value, complete: false }).then((data) => {
+      setTasks([...tasks, data]);
+      setValue("");
+    });
   }
+
   function markCompleted(listItem) {
-    setTasks(
-      tasks.map((task) =>
-        task.id === listItem.id ? { ...task, complete: !task.complete } : task
-      )
-    );
+    TodoAPI.updateById(listItem.id, {
+      ...listItem,
+      complete: !listItem.complete,
+    }).then(() => {
+      setTasks(
+        tasks.map((task) =>
+          task.id === listItem.id ? { ...task, complete: !task.complete } : task
+        )
+      );
+    });
+  }
+
+  function onRemove(id) {
+    TodoAPI.deleteById(id).then(() => {
+      setTasks([...tasks.filter((task) => task.id !== id)]);
+    });
   }
 
   return (
@@ -57,9 +64,7 @@ function App() {
               }
               task={listItem}
               key={listItem.id}
-              onRemove={() =>
-                setTasks([...tasks.filter((task) => task.id !== listItem.id)])
-              }
+              onRemove={() => onRemove(listItem.id)}
               onCompleted={() => markCompleted(listItem)}
             />
           ))}
