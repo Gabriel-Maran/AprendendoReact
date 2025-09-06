@@ -6,7 +6,7 @@ export default function TaskItem({ task, onRemove, onCompleted, idTask }) {
     <>
       <li id={idTask}>
         <Link to={`/detail/${task.id}`} id="linkTask">
-          {task.tarefa}
+          <p>{task.tarefa}</p>
         </Link>
         <div id="botoesInteragiveis">
           <BotaoTask idButton={"btnConcluir"} execucao={() => onCompleted()}>

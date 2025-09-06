@@ -67,12 +67,12 @@ html {
   border: 1px rgba(0, 0, 0, 0.137) solid;
 }
 
-#taskIndividual #linkTask:hover {
+#taskIndividual:hover {
   background-color: rgb(226, 226, 180);
   border-radius: 10px 0 0 10px;
 }
 
-#taskIndividualConcluida #linkTask:hover {
+#taskIndividualConcluida:hover {
   background-color: rgb(226, 226, 180);
   border-radius: 10px 0 0 10px;
 }
@@ -84,8 +84,8 @@ html {
 
 #taskIndividualConcluida p {
   display: flex;
-  text-decoration: line-through;
   align-items: center;
+  text-decoration: line-through;
 }
 
 #botoesInteragiveis {
