@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../style/App.css";
 import AddTask from "../componentes/AddTask";
 import TaskItem from "../componentes/TaskItem";
 import Tasks from "../componentes/Tasks";
@@ -42,7 +41,7 @@ function App() {
 
   return (
     <>
-      <section id="listaTarefas">
+      <section className="sectionMain">
         <h1>TODO List</h1>
         {/* 
       'e' é o evento disparado no onChange,
