@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import "./App.css";
-import AddTask from "./componentes/AddTask";
-import TaskItem from "./componentes/TaskItem";
-import Tasks from "./componentes/Tasks";
-import { TodoAPI } from "./shared/services/api/TodoAPI";
+import "../style/App.css";
+import AddTask from "../componentes/AddTask";
+import TaskItem from "../componentes/TaskItem";
+import Tasks from "../componentes/Tasks";
+import { TodoAPI } from "../shared/services/api/TodoAPI";
 
 function App() {
   const [value, setValue] = useState("");
   const [tasks, setTasks] = useState([]);
+  console.log(tasks);
   useEffect(() => {
     TodoAPI.getAll().then((data) => setTasks(data));
     // UseEffect: Executa toda vez que algo dentro dos '[]' mudar, ou seja,
@@ -23,27 +24,26 @@ function App() {
   }
 
   function markCompleted(listItem) {
+    setTasks(
+      tasks.map((task) =>
+        task.id === listItem.id ? { ...task, complete: !task.complete } : task
+      )
+    );
     TodoAPI.updateById(listItem.id, {
       ...listItem,
       complete: !listItem.complete,
-    }).then(() => {
-      setTasks(
-        tasks.map((task) =>
-          task.id === listItem.id ? { ...task, complete: !task.complete } : task
-        )
-      );
     });
   }
 
   function onRemove(id) {
-    TodoAPI.deleteById(id).then(() => {
-      setTasks([...tasks.filter((task) => task.id !== id)]);
-    });
+    setTasks([...tasks.filter((task) => task.id !== id)]);
+    TodoAPI.deleteById(id);
   }
 
   return (
     <>
       <section id="listaTarefas">
+        <h1>TODO List</h1>
         {/* 
       'e' é o evento disparado no onChange,
       'e.target' é o input que disparou o evento,
@@ -54,9 +54,14 @@ function App() {
           inputQndMudar={(e) => setValue(e.target.value)}
           buttonQndClicar={() => add()}
           idSection={"addTask"}
-          conteudo={"Adicionar"}
+          conteudo={"Add"}
         />
         <Tasks idTasks={"idTasks"}>
+          {tasks.length == 0 && (
+            <section id="noTaskText">
+              <h3>There's no task avaliabe</h3>
+            </section>
+          )}
           {tasks.map((listItem) => (
             <TaskItem
               idTask={

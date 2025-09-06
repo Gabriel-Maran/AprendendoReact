@@ -6,11 +6,16 @@ export default function TaskItem({ task, onRemove, onCompleted, idTask }) {
       <li id={idTask}>
         <p id="nomeTarefa">{task.tarefa}</p>
         <div id="botoesInteragiveis">
-          <BotaoTask idButton={"estiloBotao"} execucao={() => onRemove()}>
-            remover
-          </BotaoTask>
-          <BotaoTask idButton={"estiloBotao"} execucao={() => onCompleted()}>
-            concluir
+          {!task.complete ? (
+            <BotaoTask idButton={"btnConcluir"} execucao={() => onCompleted()}>
+              Concluir
+            </BotaoTask>
+          ) : (
+            ""
+          )}
+
+          <BotaoTask idButton={"btnExcluir"} execucao={() => onRemove()}>
+            Remover
           </BotaoTask>
         </div>
       </li>

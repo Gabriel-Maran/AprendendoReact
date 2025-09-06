@@ -48,3 +48,15 @@ button {
 input {
   padding: 0.5rem;
 }
+
+#barraProgresso {
+  padding: 1rem;
+  border: 1px black solid;
+  width: 354.312px;
+}
+
+#barraProgressoWithout {
+  padding: 1.55rem;
+  border: 1px black solid;
+  width: 354.312px;
+}

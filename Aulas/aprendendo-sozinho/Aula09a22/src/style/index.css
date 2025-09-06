@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+}
+
+html {
+  background-color: rgb(255, 255, 255);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#listaTarefas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  background-color: rgb(238, 233, 233);
+  border-radius: 8px;
+  border: 2px rgba(0, 0, 0, 0.13) solid;
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0.2, 0.3);
+}
+
+#addTask {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(238, 233, 233);
+  border-radius: 8px;
+  width: 90%;
+}
+
+#idTasks {
+  width: 90%;
+  align-content: center;
+}
+
+#taskIndividual {
+  display: flex;
+  background-color: rgb(238, 233, 233);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  border: 1px rgba(0, 0, 0, 0.137) solid;
+}
+
+#taskIndividualConcluida {
+  display: flex;
+  background-color: rgb(238, 233, 233);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  border: 1px rgba(0, 0, 0, 0.137) solid;
+}
+
+#taskIndividual p {
+  display: flex;
+  align-items: center;
+}
+
+#taskIndividualConcluida p {
+  display: flex;
+  text-decoration: line-through;
+  align-items: center;
+}
+
+#botoesInteragiveis {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 50%;
+  gap: 5px;
+}
+
+#nomeTarefa {
+  width: 50%;
+}
+
+#btnConcluir {
+  background-color: rgb(39, 146, 29);
+  border: 1px solid rgba(19, 134, 19, 0.151);
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  border-radius: 2rem;
+  min-width: 5rem;
+}
+
+#btnConcluir:hover {
+  background-color: rgb(34, 117, 26);
+}
+
+#btnExcluir {
+  background-color: rgb(226, 61, 61);
+  border: 1px solid rgba(97, 30, 30, 0.384);
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  border-radius: 2rem;
+  min-width: 5rem;
+}
+
+#btnExcluir:hover {
+  background-color: rgb(161, 38, 38);
+}
+
+#addTaskButton {
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: 1px rgba(0, 0, 0, 0.753) solid;
+  width: 33%;
+}
+
+#addTaskButton:hover {
+  background-color: lightgrey;
+}
+
+#addTaskInpt {
+  border: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+}
+
+#noTaskText {
+  text-align: center;
+  font-weight: normal;
+}
+
+#barraNavegação {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(62, 146, 76);
+  border-bottom: 1px rgba(44, 177, 77, 0.233) solid;
+  gap: 1.5rem;
+  top: 0;
+}
+
+#barraNavegação a {
+  background-color: rgb(62, 146, 76);
+  color: white;
+  padding: 0.7rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  min-width: 6rem;
+  max-width: 6rem;
+  text-align: center;
+}
+
+#barraNavegação a:hover {
+  background-color: rgb(23, 116, 39);
+}
+
+#baseContent {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

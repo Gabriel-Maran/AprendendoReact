@@ -8,7 +8,12 @@ export default function AddTask({
   return (
     <>
       <section id={idSection}>
-        <input id="addTaskInpt" value={inputValue} onChange={inputQndMudar} />
+        <input
+          id="addTaskInpt"
+          value={inputValue}
+          onChange={inputQndMudar}
+          placeholder="Type your task here"
+        />
         <button
           id="addTaskButton"
           onClick={() => {

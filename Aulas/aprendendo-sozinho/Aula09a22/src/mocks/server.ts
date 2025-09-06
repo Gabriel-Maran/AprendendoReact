@@ -8,7 +8,6 @@ createServer({
     const todosAsString = localStorage.getItem("MOCK_TODOS");
     if (todosAsString === null) return;
     const todos = JSON.parse(todosAsString);
-    console.log("TODOS: ", todos);
     todos.models.forEach((element: {}) => {
       server.schema.create("todos", element);
     });
