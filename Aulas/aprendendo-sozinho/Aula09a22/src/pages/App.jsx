@@ -7,7 +7,6 @@ import { TodoAPI } from "../shared/services/api/TodoAPI";
 function App() {
   const [value, setValue] = useState("");
   const [tasks, setTasks] = useState([]);
-  console.log(tasks);
   useEffect(() => {
     TodoAPI.getAll().then((data) => setTasks(data));
     // UseEffect: Executa toda vez que algo dentro dos '[]' mudar, ou seja,

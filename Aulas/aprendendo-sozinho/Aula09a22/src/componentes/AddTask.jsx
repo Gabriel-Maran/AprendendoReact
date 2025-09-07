@@ -15,6 +15,7 @@ export default function AddTask({
     <>
       <section id={idSection}>
         <input
+          required
           id="addTaskInpt"
           value={inputValue}
           onChange={inputQndMudar}
@@ -24,7 +25,7 @@ export default function AddTask({
         <button
           id="addTaskButton"
           onClick={() => {
-            buttonQndClicar();
+            inputRef.current.value != "" ? buttonQndClicar() : "";
             inputRef.current?.focus();
           }}
         >
