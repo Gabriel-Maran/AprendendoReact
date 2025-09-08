@@ -1,24 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .card {
   padding: 2rem;
   border-radius: 20px;
-  width: 20rem;
+  width: 50%;
   border: 1px solid grey;
-  background-color: black;
-  text-align: justify;
+  background-color: rgb(94, 88, 88);
+  text-align: center;
   text-indent: 20px;
+  margin-bottom: 6rem;
 }
 
 #home {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   justify-content: center;
 }
 
 #footerHome {
   width: 100%;
-  position: fixed;
   bottom: 0;
+  text-align: center;
+  position: fixed;
   padding: 2rem;
+  background-color: rgb(134, 129, 129);
+}
+
+#headerPrincipal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: rgb(134, 129, 129);
+  width: 100%;
+  padding: 2em;
+  margin-bottom: 2rem;
+}
+
+#textoEsquerda {
+  width: 33.3%;
+}
+
+#textoMeio {
+  width: 33.3%;
+  text-align: center;
+}
+
+#textoDireita {
+  display: flex;
+  width: 33.3%;
+  justify-content: right;
+}
+
+#textoDireita a {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(179, 167, 167);
 }

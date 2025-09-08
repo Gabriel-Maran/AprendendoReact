@@ -7,7 +7,11 @@ function App() {
   return (
     <>
       <div id="home">
-        <Header titulo={"Meu site"} />
+        <Header
+          titulo={"Meu site"}
+          siteNome={"AppEffect"}
+          pagina={"/appEffect"}
+        />
         <Card />
         <Footer titulo={"Meu footer"} />
       </div>
