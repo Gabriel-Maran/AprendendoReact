@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  padding: 2rem;
+  text-align: center;
+}
+
+#continerMain {
+  display: flex;
+  gap: 4rem;
+}
+
+.bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(63, 61, 61);
+  border-radius: 10px;
+  padding: 1.4rem;
+}
