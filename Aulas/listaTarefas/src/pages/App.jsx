@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import "../css/App.css";
 import Task from "../componentes/Task";
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const raw = localStorage.getItem("LISTA_TAREFAS");
+    return raw ? JSON.parse(raw) : [];
+  });
   const [taskType, setTaskType] = useState("");
+
   useEffect(() => {
-    console.log(tasks);
+    localStorage.setItem("LISTA_TAREFAS", JSON.stringify(tasks));
   }, [tasks]);
 
   function onComplete(task) {
@@ -29,14 +32,16 @@ export default function App() {
           placeholder="Digite uma tarefa"
         />
         <button
-          onClick={() =>
-            taskType != ""
-              ? setTasks([
-                  ...tasks,
-                  { id: tasks.length + 1, tarefa: taskType, complete: false },
-                ])
-              : ""
-          }
+          onClick={() => {
+            if (!taskType.trim()) return;
+            const newTask = {
+              id: Date.now(),
+              tarefa: taskType,
+              complete: false,
+            };
+            const tarefas = [...tasks, newTask];
+            setTasks(tarefas);
+          }}
         >
           Adicionar
         </button>

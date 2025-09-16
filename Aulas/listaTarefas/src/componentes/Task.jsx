@@ -1,13 +1,28 @@
-export default function Task({ idTexto, completar, deletar, tarefaNome }) {
+export default function Task({
+  idTexto,
+  completar,
+  deletar,
+  tarefaNome,
+  task,
+}) {
   return (
     <>
       <li>
         <p id={idTexto}>{tarefaNome}</p>
         <div>
-          <button onClick={() => completar()} className="complete-btn">
+          <button
+            onClick={() => {
+              completar();
+            }}
+            className="complete-btn"
+          >
             ✔
           </button>
-          <button onClick={() => deletar()} className="delete-btn">
+          <button
+            disabled={task.complete}
+            onClick={() => deletar()}
+            className="delete-btn"
+          >
             ❌
           </button>
         </div>
