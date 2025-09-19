@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "../css/App.css";
+import InputHandler from "../componentes/InputHandler";
+import LinhaTabelaOrcamento from "../componentes/linhaTabelaOrcamento";
 
-function App() {
-  const [oracamento, setOrcamento] = useState(() => {
+export default function App() {
+  const [orcamento, setOrcamento] = useState(() => {
     const raw = localStorage.getItem("ITENS-STORAGE");
     return raw ? JSON.parse(raw) : [];
   });
@@ -13,7 +15,7 @@ function App() {
 
   function adicionarItem(desc, qntd, valor) {
     setOrcamento([
-      ...oracamento,
+      ...orcamento,
       {
         id: crypto.randomUUID(),
         descricao: desc,
@@ -25,18 +27,18 @@ function App() {
 
   function excluirItem(id) {
     const newOrcamento = [];
-    oracamento.filter((item) => (item.id == id ? "" : newOrcamento.push(item)));
+    orcamento.filter((item) => (item.id == id ? "" : newOrcamento.push(item)));
     setOrcamento(newOrcamento);
   }
   useEffect(() => {
-    const totalPrecos = oracamento.reduce((acum, itemAtual) => {
+    const totalPrecos = orcamento.reduce((acum, itemAtual) => {
       return acum + itemAtual.valor * itemAtual.quantidade;
     }, 0);
     setValorTotal(totalPrecos);
-  }, [oracamento]);
+  }, [orcamento]);
 
   useEffect(() => {
-    localStorage.setItem("ITENS-STORAGE", JSON.stringify(oracamento));
+    localStorage.setItem("ITENS-STORAGE", JSON.stringify(orcamento));
   });
 
   return (
@@ -45,23 +47,17 @@ function App() {
         <h2>Orçamento</h2>
         <section className="blocoPrincipal">
           <section className="addOrcamento">
-            <input
-              onChange={(e) => setDescHandle(e.target.value)}
-              className="inputsOrcamento"
-              type="text"
-              placeholder="Descrição"
+            <InputHandler
+              qndMudar={(e) => setDescHandle(e.target.value)}
+              campoNome={"Descrição"}
             />
-            <input
-              onChange={(e) => setQntdHandle(e.target.value)}
-              className="inputsOrcamento"
-              type="text"
-              placeholder="Quantidade"
+            <InputHandler
+              qndMudar={(e) => setQntdHandle(e.target.value)}
+              campoNome={"Quantidade"}
             />
-            <input
-              onChange={(e) => setValorHandle(e.target.value)}
-              className="inputsOrcamento"
-              type="text"
-              placeholder="Valor"
+            <InputHandler
+              qndMudar={(e) => setValorHandle(e.target.value)}
+              campoNome={"Valor"}
             />
             <button
               onClick={() => adicionarItem(descHandle, qntdHandle, valorHandle)}
@@ -72,40 +68,40 @@ function App() {
           </section>
           <table className="tableDesc">
             <thead>
-              <tr key={Date.now()}>
-                <th className="linhas">Descrição</th>
-                <th className="linhas">Qtd</th>
-                <th className="linhas">Unitário</th>
-                <th className="linhas">Total</th>
-                <th className="linhas">Ações</th>
-              </tr>
+              <LinhaTabelaOrcamento
+                primCampo={"Descrição"}
+                segCampo={"Qtd"}
+                tercCampo={"Unitário"}
+                quartoCampo={"Total"}
+                quintoCampo={"Ações"}
+              ></LinhaTabelaOrcamento>
             </thead>
             <tbody>
-              {oracamento.map((item) => {
+              {orcamento.map((item) => {
                 return (
                   <>
-                    <tr key={Date.now()}>
-                      <th className="linhas">{item.descricao}</th>
-                      <th className="linhas">{item.quantidade}</th>
-                      <th className="linhas">
-                        {Number.isNaN(item.valor) ? "" : "R$"}{" "}
-                        {Number.parseFloat(item.valor).toFixed(2)}
-                      </th>
-                      <th className="linhas">
-                        {Number.isNaN(item.quantidade) ? "" : "R$"}{" "}
-                        {Number.parseFloat(
-                          item.valor * item.quantidade
-                        ).toFixed(2)}
-                      </th>
-                      <th className="linhas">
+                    <LinhaTabelaOrcamento
+                      primCampo={item.descricao}
+                      segCampo={item.quantidade}
+                      tercCampo={
+                        Number.isNaN(item.valor)
+                          ? ""
+                          : `R$ ${Number.parseFloat(item.valor).toFixed(2)}`
+                      }
+                      quartoCampo={
+                        Number.isNaN(item.valor)
+                          ? ""
+                          : `R$ ${Number.parseFloat(item.valor).toFixed(2)}`
+                      }
+                      quintoCampo={
                         <button
                           onClick={() => excluirItem(item.id)}
                           className="excluirItem"
                         >
                           X
                         </button>
-                      </th>
-                    </tr>
+                      }
+                    />
                   </>
                 );
               })}
@@ -119,5 +115,3 @@ function App() {
     </>
   );
 }
-
-export default App;

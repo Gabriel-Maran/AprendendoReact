@@ -1,13 +1,11 @@
-export default function InputHandler() {
+export default function InputHandler({ qndMudar, campoNome }) {
   return (
     <>
       <input
-        onChange={() => {
-          qndMudar();
-        }}
+        onChange={qndMudar}
         className="inputsOrcamento"
         type="text"
-        placeholder="Descrição"
+        placeholder={campoNome}
       />
     </>
   );
