@@ -35,11 +35,8 @@ export default function App() {
       return acum + itemAtual.valor * itemAtual.quantidade;
     }, 0);
     setValorTotal(totalPrecos);
-  }, [orcamento]);
-
-  useEffect(() => {
     localStorage.setItem("ITENS-STORAGE", JSON.stringify(orcamento));
-  });
+  }, [orcamento]);
 
   return (
     <>
