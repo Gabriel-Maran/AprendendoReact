@@ -60,7 +60,7 @@ export default function UseReducer() {
   return (
     <>
       <section>
-        <h2>useRef</h2>
+        <h2>useReducer</h2>
         <section className="bloco">
           <section className="uso">
             <p>{state.counter}</p>
@@ -86,6 +86,7 @@ export default function UseReducer() {
               type="text"
               ref={refInput}
             />
+            <br />
             <button
               onClick={() => {
                 dispatch2({ type: "add", payload: inputValue });

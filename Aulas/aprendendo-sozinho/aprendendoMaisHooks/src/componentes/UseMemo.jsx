@@ -12,11 +12,12 @@ export default function UseMemo() {
   return (
     <>
       <section>
-        <h2>useRef</h2>
+        <h2>useMemo</h2>
         <section className="bloco">
           <section className="uso">
             <p>{number}</p>
             <input type="text" onChange={(e) => setText(e.target.value)} />
+            <br />
             <button onClick={() => setNumber(number + 1)}>Increment</button>
             <p>Text: {text}</p>
             <p>Number: {number}</p>

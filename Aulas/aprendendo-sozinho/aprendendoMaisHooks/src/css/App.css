@@ -1,12 +1,15 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   padding: 2rem;
   text-align: center;
 }
 
 #continerMain {
   display: flex;
+  width: 100%;
   gap: 4rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .bloco {
