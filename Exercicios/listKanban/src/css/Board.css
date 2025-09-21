@@ -1,0 +1,78 @@
+#board-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#board {
+  display: flex;
+  text-align: center;
+  border: 1px solid black;
+}
+
+#board h2 {
+  font-weight: normal;
+}
+
+#todo {
+  background-color: rgb(255, 255, 255);
+  min-width: 400px;
+}
+
+#doing {
+  background-color: rgb(255, 255, 255);
+  min-width: 400px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#done {
+  background-color: rgb(255, 255, 255);
+  min-width: 400px;
+}
+
+.bloco-Escrita {
+  padding: 1rem;
+  background-color: rgb(3, 136, 177);
+  border-bottom: 1px solid black;
+}
+
+.bloco-Itens {
+  padding: 1rem;
+}
+
+#botaoAddTask {
+  z-index: 100;
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+}
+
+#botaoAddTask button {
+  background-color: rgb(16, 86, 179);
+  font-size: 20px;
+  color: white;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+}
+
+#botaoAddTask button:hover {
+  background-color: rgb(7, 56, 119);
+}
+
+@media (max-width: 1201px) {
+  #todo {
+    min-width: 300px;
+  }
+  #doing {
+    min-width: 300px;
+  }
+  #done {
+    min-width: 300px;
+  }
+  #board {
+    justify-content: start;
+  }
+}

@@ -1,0 +1,37 @@
+#modalMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.pergunta {
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+  max-width: 80%;
+  margin: 0.5rem auto;
+}
+
+#addNewTask {
+  background-color: green;
+  color: white;
+  width: 100px;
+  padding: 0.6rem;
+  margin-top: 1rem;
+  border: 1px rgb(1, 77, 1) solid;
+  border-radius: 10px;
+}
+
+#addNewTask:hover {
+  background-color: rgb(0, 78, 0);
+}
+
+input {
+  padding: 0.4rem;
+}
