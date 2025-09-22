@@ -2,13 +2,28 @@ import { useEffect, useReducer, useState } from "react";
 import "../css/Board.css";
 import AddTaskModal from "./AddTaskModal";
 import TaskModal from "./TaskModal";
+import Task from "./Task";
 
 function reducer(state, action) {
   if (action.type === "onAdd") {
     const update = [...state.todoList, action.payload];
     return {
+      ...state,
       todoList: update,
     };
+  } else if (action.type === "openingTask") {
+    const storage = action.payload.nameStorage;
+    const itens = JSON.parse(localStorage.getItem(storage)) || [];
+    const newItens = itens.map((item) =>
+      item.id === action.payload.id ? { ...item, isOpen: !item.isOpen } : item
+    );
+    if (storage === "TODO-STORAGE") {
+      return { ...state, todoList: newItens };
+    } else if (storage === "DOING-STORAGE") {
+      return { ...state, doingList: newItens };
+    } else if (storage === "DONE-STORAGE") {
+      return { ...state, doneList: newItens };
+    }
   }
 
   return state;
@@ -26,6 +41,16 @@ export default function Board() {
     {
       dispatch({ type: "onAdd", payload: newTask });
     }
+  }
+
+  function openAndCloseTaskModal(itemId, storage) {
+    dispatch({
+      type: "openingTask",
+      payload: {
+        id: itemId,
+        nameStorage: storage,
+      },
+    });
   }
 
   useEffect(() => {
@@ -52,32 +77,12 @@ export default function Board() {
             <div className="bloco-Itens">
               {state.todoList.map((item) => {
                 return (
-                  <div key={item.id} className="task-block">
-                    <p>Tarefa: {item.titulo}</p>
-                    <p>Previsão para fim: {item.fimPrevisto}</p>
-                    <div>
-                      <button>&lt;</button>
-                      <button
-                        onClick={() => {
-                          {
-                            /*
-                            dispatch({
-                              type: "openingTask",
-                              payload: item.id,
-                              nameStorage: "TODO-STORAGE",
-                            });
-                            */
-                            //A criar dispatch para atualizar o state com o valor de open = true, para abrir o modal individual de cada task
-                            //Posso fazer isso como uma pagina sobreescrita, com o id da task(ideia, caso esta de errado)
-                          }
-                        }}
-                      >
-                        ≡
-                      </button>
-                      <button>&gt;</button>
-                    </div>
-                    <TaskModal open={item.isOpen} task={item} />
-                  </div>
+                  <Task
+                    key={item.id}
+                    abreFecha={openAndCloseTaskModal}
+                    item={item}
+                    storage={"TODO-STORAGE"}
+                  />
                 );
               })}
             </div>
@@ -87,7 +92,16 @@ export default function Board() {
               <h2>Doing</h2>
             </div>
             <div className="bloco-Itens">
-              <p>A</p>
+              {state.doingList.map((item) => {
+                return (
+                  <Task
+                    key={item.id}
+                    abreFecha={openAndCloseTaskModal}
+                    item={item}
+                    storage={"DOING-STORAGE"}
+                  />
+                );
+              })}
             </div>
           </div>
           <div id="done">
@@ -95,7 +109,16 @@ export default function Board() {
               <h2>Done</h2>
             </div>
             <div className="bloco-Itens">
-              <p>A</p>
+              {state.doneList.map((item) => {
+                return (
+                  <Task
+                    key={item.id}
+                    abreFecha={openAndCloseTaskModal}
+                    item={item}
+                    storage={"DONE-STORAGE"}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>
