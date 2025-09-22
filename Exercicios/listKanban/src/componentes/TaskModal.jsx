@@ -2,19 +2,21 @@ import Modal from "react-modal";
 import "../css/TaskModal.css";
 
 Modal.setAppElement("#root");
-export default function TaskModal({ task, open, buttonClick }) {
+export default function TaskModal({ task, open, closeModal, deleteModal }) {
   return (
     <>
       <Modal className="taskModal" isOpen={open}>
         <div className="blocoTasks">
           <div className="blocoTitulo">
             <div className="itensAEsquerdaTitulo">
-              <button onClick={buttonClick}>✖</button>
+              <button onClick={closeModal}>✖</button>
             </div>
             <div className="itensACentroTitulo">
               <h2>{task.titulo}</h2>
             </div>
-            <div className="itensADiretaTitulo"></div>
+            <div className="itensADiretaTitulo">
+              <button onClick={deleteModal}>🗑️</button>
+            </div>
           </div>
           <div className="listagemItens">
             <ul>

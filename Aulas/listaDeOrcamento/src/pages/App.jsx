@@ -34,6 +34,7 @@ export default function App() {
     const totalPrecos = orcamento.reduce((acum, itemAtual) => {
       return acum + itemAtual.valor * itemAtual.quantidade;
     }, 0);
+    
     setValorTotal(totalPrecos);
     localStorage.setItem("ITENS-STORAGE", JSON.stringify(orcamento));
   }, [orcamento]);

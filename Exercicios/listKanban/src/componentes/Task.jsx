@@ -1,23 +1,39 @@
 import TaskModal from "./TaskModal";
 
-export default function Task({ item, abreFecha, storage }) {
+export default function Task({
+  item,
+  abreFecha,
+  storage,
+  onNextStorage,
+  onPreviousStorage,
+  deleteModal,
+}) {
   return (
     <>
       <div className="task-block">
         <p>Tarefa: {item.titulo}</p>
         <p>Previsão para fim: {item.fimPrevisto}</p>
         <div>
-          <button className="buttonAdvanceReturn">&lt;</button>
+          {storage != "TODO-STORAGE" && (
+            <button className="buttonAdvanceReturn" onClick={onPreviousStorage}>
+              &lt;
+            </button>
+          )}
           <button
             className="buttonAdvanceReturn"
             onClick={() => abreFecha(item.id, storage)}
           >
             ≡
           </button>
-          <button className="buttonAdvanceReturn">&gt;</button>
+          {storage != "DONE-STORAGE" && (
+            <button className="buttonAdvanceReturn" onClick={onNextStorage}>
+              &gt;
+            </button>
+          )}
         </div>
         <TaskModal
-          buttonClick={() => abreFecha(item.id, storage)}
+          closeModal={() => abreFecha(item.id, storage)}
+          deleteModal={deleteModal}
           open={item.isOpen}
           task={item}
         />

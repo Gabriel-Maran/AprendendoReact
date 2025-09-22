@@ -26,7 +26,7 @@ export default function AddTaskModal({ estaAberto, onAddTAsk }) {
       <Modal id="modalMain" isOpen={estaAberto}>
         <h2>Adicione a Task:</h2>
         <div className="pergunta">
-          <label htmlFor="titulo">Titúlo:</label>
+          <label htmlFor="titulo">Título:</label>
           <input ref={titulo} id="titulo" type="text" />
         </div>
         <div className="pergunta">
@@ -40,6 +40,7 @@ export default function AddTaskModal({ estaAberto, onAddTAsk }) {
         <div>
           <button
             onClick={() => {
+              console.log(titulo.current.value);
               if (!titulo) return;
               addTask(
                 titulo.current.value,
