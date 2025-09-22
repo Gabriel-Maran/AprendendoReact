@@ -2,21 +2,25 @@ import Modal from "react-modal";
 import "../css/AddTaskModal.css";
 import { useRef } from "react";
 Modal.setAppElement("#root");
-export default function AddTaskModal({ estaAberto }) {
+export default function AddTaskModal({ estaAberto, onAddTAsk }) {
   const titulo = useRef("");
   const desc = useRef("");
   const fimPrev = useRef();
   function addTask(titulo, desc, fimPrev) {
     let content = JSON.parse(localStorage.getItem("TODO-STORAGE")) || [];
-    content.push({
+    const newTask = {
       id: crypto.randomUUID(),
       titulo: titulo,
       descricao: desc,
       estaEm: "ToDo",
       fimPrevisto: fimPrev,
-    });
+      isOpen: false,
+    };
+    onAddTAsk(newTask);
+    content.push(newTask);
     localStorage.setItem("TODO-STORAGE", JSON.stringify(content));
   }
+
   return (
     <>
       <Modal id="modalMain" isOpen={estaAberto}>

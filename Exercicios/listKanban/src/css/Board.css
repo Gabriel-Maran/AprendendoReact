@@ -62,6 +62,17 @@
   background-color: rgb(7, 56, 119);
 }
 
+.task-block {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border: 1px solid black;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  gap: 0.2rem;
+}
+
 @media (max-width: 1201px) {
   #todo {
     min-width: 300px;
@@ -72,7 +83,13 @@
   #done {
     min-width: 300px;
   }
-  #board {
+  #board-container {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 901px) {
+  #board-container {
     justify-content: start;
   }
 }
