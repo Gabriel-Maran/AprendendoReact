@@ -1,0 +1,106 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+#bloco-interno {
+  background: #e9ebee;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  max-width: 60%;
+  padding: 2rem;
+}
+
+.container h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.container p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.container button {
+  margin: 5px;
+  padding: 8px 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.container button:nth-child(2) {
+  background: #f87171; /* vermelho */
+  color: white;
+}
+
+.container button:nth-child(3) {
+  background: #34d399; /* verde */
+  color: white;
+}
+
+.container button:nth-child(4) {
+  background: #60a5fa; /* azul */
+  color: white;
+}
+
+.container button:hover {
+  opacity: 0.85;
+}
+
+div {
+  text-align: center;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:nth-child(2) {
+  background: #f87171; /* vermelho */
+  color: white;
+}
+
+button:nth-child(3) {
+  background: #34d399; /* verde */
+  color: white;
+}
+
+button:nth-child(4) {
+  background: #60a5fa; /* azul */
+  color: white;
+}
+
+button:hover {
+  opacity: 0.85;
+}
