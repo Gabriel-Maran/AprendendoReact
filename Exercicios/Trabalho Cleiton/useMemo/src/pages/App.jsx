@@ -5,7 +5,7 @@ import React, { useState, useMemo } from "react";
 function expensiveCalculation(num) {
   console.log("Realizando calculo caro...");
   let result = 0;
-  for (let i = 0; i < 10_000_000; i++) {
+  for (let i = 0; i < 5_000_000; i++) {
     result = (num * i) / num - result;
   }
   return result + num;

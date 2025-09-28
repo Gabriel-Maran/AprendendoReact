@@ -7,7 +7,6 @@ export default function App() {
   const [countState, setCountState] = useState(0);
 
   console.log("Renderizou!");
-
   function incrementRef() {
     console.log("Cliques + 1");
     countRef.current += 1;

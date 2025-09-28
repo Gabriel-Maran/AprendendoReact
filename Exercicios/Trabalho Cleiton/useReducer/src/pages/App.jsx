@@ -3,9 +3,14 @@ import "../css/App.css";
 import React, { useReducer } from "react";
 
 function reducer(state, action) {
+  console.log("reducer:", action.type);
   switch (action.type) {
     case "increment":
       return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    case "reset":
+      return { count: 0 };
     default:
       return state;
   }
