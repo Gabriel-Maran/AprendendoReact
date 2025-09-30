@@ -1,0 +1,30 @@
+.newItem-container {
+  text-align: center;
+  width: 40rem;
+}
+
+.inputCampos {
+  width: 30%;
+  padding: 0.4rem;
+  margin-right: 0.6rem;
+  border-radius: 4px;
+  border: 1px grey solid;
+}
+
+.buttonEnviar {
+  padding: 0.4rem;
+  width: 1.8rem;
+  background-color: rgb(16, 148, 16);
+  border: green 1px solid;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.buttonEnviar:hover {
+  background-color: rgb(12, 128, 12);
+}
+
+.camposParaInserir {
+  margin: 1rem 0;
+}
