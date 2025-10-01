@@ -3,8 +3,8 @@ import "../css/AddItem.css";
 
 export default function AddItem({ createNewItem }) {
   const descricao = useRef("");
-  const qntdd = useRef(1);
-  const valorUni = useRef(0);
+  const qntdd = useRef(0);
+  const valorUni = useRef("");
   return (
     <>
       <section className="newItem-container">
@@ -26,7 +26,7 @@ export default function AddItem({ createNewItem }) {
           />
           <input
             onChange={(e) => (valorUni.current = e.target.value)}
-            type="text"
+            type=" "
             className="inputCampos"
             placeholder="Valor Uni"
           />

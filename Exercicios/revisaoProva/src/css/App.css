@@ -4,3 +4,26 @@
   align-items: center;
   margin: 6rem;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgb(235, 234, 234);
+}
+
+th {
+  border: 1px grey solid;
+  padding: 0.6rem;
+  width: 10rem;
+}
+
+.lblPrecoTotal {
+  margin: 1rem 0;
+  padding: 1rem;
+  text-align: end;
+  border-radius: 8px;
+  background-color: rgb(158, 229, 158);
+  width: 40rem;
+}

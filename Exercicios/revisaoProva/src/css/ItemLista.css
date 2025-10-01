@@ -1,0 +1,48 @@
+th {
+  border-collapse: collapse;
+  border: 1px grey solid;
+  padding: 0.6rem;
+  width: 10rem;
+}
+
+button {
+  padding: 0.65rem;
+  margin: 2px;
+  width: 2.1rem;
+}
+
+.btnAumentar {
+  background-color: rgb(3, 167, 3);
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
+
+.btnDiminuir {
+  background-color: rgb(235, 145, 145);
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
+
+.btnExcluir {
+  background-color: rgb(228, 41, 41);
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
+
+.btnAumentar:hover {
+  background-color: rgb(3, 122, 3);
+  cursor: pointer;
+}
+
+.btnDiminuir:hover {
+  background-color: rgb(190, 118, 118);
+  cursor: pointer;
+}
+
+.btnExcluir:hover {
+  background-color: rgb(180, 36, 36);
+  cursor: pointer;
+}
