@@ -1,0 +1,50 @@
+#main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+table {
+  margin-top: 2rem;
+  border: solid rgb(33, 141, 33) 1px;
+  border-collapse: collapse;
+}
+tr {
+  border: solid rgb(33, 141, 33) 1px;
+}
+
+th {
+  padding: 0.8rem;
+  border: solid rgb(33, 141, 33) 1px;
+  width: 10em;
+}
+
+thead {
+  background-color: rgb(142, 230, 142);
+}
+
+.classOrderDate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.classOrderDate img {
+  border: solid rgb(39, 170, 39) 1px;
+  border: solid 1px green;
+  border-radius: 50%;
+  margin-left: 10px;
+  width: 1.4em;
+  cursor: pointer;
+}
+
+#sortIcon {
+  transition: transform 0.5s ease;
+}
+
+#sortIcon.rotated {
+  transform: rotate(180deg);
+}
