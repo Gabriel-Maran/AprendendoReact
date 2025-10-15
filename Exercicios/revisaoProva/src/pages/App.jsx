@@ -17,12 +17,7 @@ function App() {
 
     console.log("Valor", valorUnitario);
     console.log("Quantidade", quantidade);
-    if (
-      descricao == "" ||
-      !Number.isInteger(quantidade) ||
-      !Number.isInteger(valorUnitario)
-    )
-      return;
+
     setOrcamentoList([
       ...orcamentoList,
       {
