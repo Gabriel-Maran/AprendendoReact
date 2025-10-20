@@ -1,0 +1,39 @@
+.cadastro-container {
+  display: flex;
+  width: 40rem;
+  justify-self: center;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px grey solid;
+}
+
+.buttonEnviar {
+  display: flex;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: rgb(16, 148, 16);
+  border: green 1px solid;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.camposParaInserir {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.camposParaInserir div {
+  width: 46%;
+  margin: 0.6rem;
+}
+
+.btnAddViagem {
+  display: flex;
+  align-items: flex-end;
+}
