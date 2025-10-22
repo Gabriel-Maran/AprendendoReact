@@ -3,8 +3,30 @@
   flex-direction: column;
   align-items: center;
   margin: 6rem;
+  gap: 1rem;
+  max-width: 40rem;
 }
 
 table {
   border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border: 1px solid rgb(202, 202, 202);
+  padding: 0.6rem;
+}
+
+thead {
+  background-color: rgb(245, 242, 242);
+}
+
+.observacoesAdicionais {
+  width: 100%;
+  background-color: rgb(209, 241, 209);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.itemObservacoes {
+  margin: 1rem 0;
 }

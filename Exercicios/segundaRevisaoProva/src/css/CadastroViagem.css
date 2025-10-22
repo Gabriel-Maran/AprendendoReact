@@ -9,17 +9,25 @@ input {
   padding: 0.6rem;
   border-radius: 4px;
   border: 1px grey solid;
+  margin-top: 0.25rem;
+  flex-grow: 1;
+}
+
+label {
+  font-weight: bold;
 }
 
 .buttonEnviar {
   display: flex;
   width: 100%;
   padding: 0.6rem;
-  background-color: rgb(16, 148, 16);
+  background-color: rgb(22, 172, 22);
   border: green 1px solid;
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .camposParaInserir {
@@ -29,7 +37,7 @@ input {
 }
 
 .camposParaInserir div {
-  width: 46%;
+  width: 47%;
   margin: 0.6rem;
 }
 
